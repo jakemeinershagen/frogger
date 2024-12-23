@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://d13txn7qihffs"]
+
+[ext_resource type="Texture2D" uid="uid://dmglijd5b6m2u" path="res://assets/Frog.png" id="1_po4eq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkrvl"]
+atlas = ExtResource("1_po4eq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ux73"]
+atlas = ExtResource("1_po4eq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfy4m"]
+atlas = ExtResource("1_po4eq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg2we"]
+atlas = ExtResource("1_po4eq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x86p6"]
+atlas = ExtResource("1_po4eq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2m8n"]
+atlas = ExtResource("1_po4eq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6cbpw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkrvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ux73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfy4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg2we")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x86p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2m8n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Frog" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6cbpw")
+frame_progress = 0.323794
