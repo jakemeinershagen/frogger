@@ -62,15 +62,18 @@ autoplay = "idle"
 position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_827t1")
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("player", "animation")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("player", "animation", "start_state")]
 script = ExtResource("3_ydw6j")
 player = NodePath("..")
 animation = NodePath("../Animation")
+start_state = NodePath("Idle")
 
 [node name="Jump" type="Node" parent="StateMachine"]
 script = ExtResource("3_xnx0l")
 animation_name = "jump"
+disable_warnings = true
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("3_xnx0l")
 animation_name = "idle"
+disable_warnings = true
