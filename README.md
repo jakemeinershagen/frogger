@@ -1,15 +1,13 @@
 # frogger
 A bad frogger clone.
 
+Started 12/23/2024
+
 https://20_games_challenge.gitlab.io/games/frogger/
 
 MVP:
 
-- Make and animate a frog.
 - The frog can move up, down, left, or right. Hop one tile on press
-- Make the play area. The area is divided into lanes (rows).
-	- There is a safe lane, five lanes of road, another safe lane, and five lanes of water.
-		Finally, there are five lillypads on the top of the screen.
 - Make and animate the game obstacles. All obstacles and platforms will cross the screen horizontally.
 	- Obstacles will alternate direction for each lane.
 	- The road has cars. Each lane has a unique pattern of cars, and speeds vary between lanes.

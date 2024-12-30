@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d13txn7qihffs"]
+[gd_scene load_steps=12 format=3 uid="uid://d13txn7qihffs"]
 
 [ext_resource type="Script" path="res://scripts/frog.gd" id="1_0vubg"]
 [ext_resource type="Texture2D" uid="uid://dmglijd5b6m2u" path="res://assets/Frog.png" id="1_po4eq"]
-[ext_resource type="Script" path="res://scripts/state.gd" id="3_xnx0l"]
+[ext_resource type="Script" path="res://scripts/jump.gd" id="3_tjdg6"]
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_ydw6j"]
+[ext_resource type="Script" path="res://scripts/idle.gd" id="5_jli18"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2m8n"]
 atlas = ExtResource("1_po4eq")
@@ -69,11 +70,11 @@ animation = NodePath("../Animation")
 start_state = NodePath("Idle")
 
 [node name="Jump" type="Node" parent="StateMachine"]
-script = ExtResource("3_xnx0l")
+script = ExtResource("3_tjdg6")
 animation_name = "jump"
 disable_warnings = true
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("3_xnx0l")
+script = ExtResource("5_jli18")
 animation_name = "idle"
 disable_warnings = true

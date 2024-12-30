@@ -26,11 +26,15 @@ func _ready() -> void:
 		push_warning("Allowed Transitions list is empty. This will allow tranistion to any state from this one.")
 
 
-func _enter_state():
+func enter_state():
 	# not sure what happens if we give an invalid name. guess we'll see someday
 	if animation_name and animation:
 		animation.play(animation_name)
 
 
-func _exit_state():
+func exit_state():
+	pass
+
+## called by state_machine in _process
+func process_state(_delta: float):
 	pass

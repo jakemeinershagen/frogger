@@ -29,6 +29,7 @@ func _ready() -> void:
 	
 	assert(start_state, "No start state provided.")
 	curr_state = states[start_state.name.to_lower()]
+	curr_state.enter_state()
 
 
 ## changes state to target, if state is in allowed transitions and lock is not true
@@ -40,7 +41,9 @@ func change_state(target_state: String) -> bool:
 	if (len(curr_state.allowed_transitions) > 0
 		and target_state not in curr_state.allowed_transitions):
 		return false
+	curr_state.exit_state()
 	curr_state = states[target_state]
+	curr_state.enter_state()
 	return true
 
 
@@ -48,3 +51,7 @@ func change_state(target_state: String) -> bool:
 func force_change_state():
 	## this would be something to use only if you really mean it.
 	assert(false, "this isn't implemented yet because I haven't needed it.")
+
+
+func _process(delta: float) -> void:
+	curr_state.process_state(delta)
