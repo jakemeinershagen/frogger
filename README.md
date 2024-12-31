@@ -7,7 +7,6 @@ https://20_games_challenge.gitlab.io/games/frogger/
 
 MVP:
 
-- The frog can move up, down, left, or right. Hop one tile on press
 - Make and animate the game obstacles. All obstacles and platforms will cross the screen horizontally.
 	- Obstacles will alternate direction for each lane.
 	- The road has cars. Each lane has a unique pattern of cars, and speeds vary between lanes.

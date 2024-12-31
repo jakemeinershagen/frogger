@@ -9,3 +9,5 @@ func _process(_delta: float) -> void:
 		or Input.is_action_just_pressed("left")
 		or Input.is_action_just_pressed("right")):
 		state_machine.change_state("jump")
+	else:
+		state_machine.change_state("idle")

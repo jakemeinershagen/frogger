@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d13txn7qihffs"]
+[gd_scene load_steps=11 format=3 uid="uid://d13txn7qihffs"]
 
 [ext_resource type="Script" path="res://scripts/frog.gd" id="1_0vubg"]
 [ext_resource type="Texture2D" uid="uid://dmglijd5b6m2u" path="res://assets/Frog.png" id="1_po4eq"]
@@ -9,10 +9,6 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2m8n"]
 atlas = ExtResource("1_po4eq")
 region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r7un1"]
-atlas = ExtResource("1_po4eq")
-region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pb8ie"]
 atlas = ExtResource("1_po4eq")
@@ -34,13 +30,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r7un1")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_pb8ie")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i647l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2m8n")
 }],
 "loop": false,
 "name": &"jump",
@@ -52,6 +48,7 @@ radius = 6.0
 height = 18.0
 
 [node name="Frog" type="CharacterBody2D"]
+slide_on_ceiling = false
 script = ExtResource("1_0vubg")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
