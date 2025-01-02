@@ -5,6 +5,10 @@ Started 12/23/2024
 
 https://20_games_challenge.gitlab.io/games/frogger/
 
+ToDo:
+- get despawner working
+- random patters for car spawning
+
 MVP:
 
 - Make and animate the game obstacles. All obstacles and platforms will cross the screen horizontally.
