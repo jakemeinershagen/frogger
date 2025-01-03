@@ -1,15 +1,21 @@
 extends StaticBody2D
 
 var SPEED = 50
-var DIRECTION = Vector2.RIGHT
+var direction = Vector2.RIGHT
 
 
 func _ready() -> void:
-	if DIRECTION == Vector2.RIGHT:
+	var i = randi_range(0, 3)
+	$Sprite2D.frame = i
+
+
+func set_direction(new_direction) -> void:
+	direction = new_direction
+	if direction == Vector2.RIGHT:
 		$Sprite2D.flip_h = true
-	elif DIRECTION == Vector2.LEFT:
+	elif direction == Vector2.LEFT:
 		$Sprite2D.flip_h = false
 
 
 func _physics_process(delta: float) -> void:
-	position += DIRECTION * SPEED * delta
+	position += direction * SPEED * delta
