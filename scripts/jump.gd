@@ -1,7 +1,7 @@
 extends State
 
 @export var jump_size = 32
-@export var lerp_amount = 0.2
+@export var lerp_amount = 0.25
 
 var direction = Vector2.UP
 var target_position = Vector2.ZERO
