@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dtm8k4pj10ycl"]
+[gd_scene load_steps=9 format=4 uid="uid://dtm8k4pj10ycl"]
 
 [ext_resource type="Texture2D" uid="uid://dht77xm6dy7vq" path="res://assets/tiles.png" id="1_47prk"]
 [ext_resource type="PackedScene" uid="uid://6tt8h8jw5mjp" path="res://scenes/lilypad.tscn" id="2_1mtby"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ma0rt0mmyorx" path="res://scenes/car.tscn" id="4_u6x73"]
 [ext_resource type="PackedScene" uid="uid://boi76kfhlmfqo" path="res://scenes/spawner.tscn" id="5_h2wnl"]
 [ext_resource type="PackedScene" uid="uid://ce4yr5gs2gdqe" path="res://scenes/log.tscn" id="5_ua7he"]
-[ext_resource type="PackedScene" uid="uid://dgl3qd48vjwoo" path="res://scenes/despawner.tscn" id="6_tqpob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttfhg"]
 texture = ExtResource("1_47prk")
@@ -115,13 +114,3 @@ OBJECT_TO_SPAWN = ExtResource("5_ua7he")
 DIRECTION = Vector2(-1, 0)
 MAX_DISTANCE = 200
 SPEED = 30
-
-[node name="Despawners" type="Node" parent="."]
-
-[node name="Despawner" parent="Despawners" instance=ExtResource("6_tqpob")]
-position = Vector2(520, 208)
-scale = Vector2(1, 20)
-
-[node name="Despawner2" parent="Despawners" instance=ExtResource("6_tqpob")]
-position = Vector2(-104, 208)
-scale = Vector2(1, 20)
