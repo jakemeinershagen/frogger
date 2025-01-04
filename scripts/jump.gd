@@ -25,6 +25,6 @@ func enter_state():
 
 func process_state(_delta: float) -> void:
 	player.position = lerp(player.position, target_position, lerp_amount)
-	if (player.position - target_position).length() < Vector2(0.005, 0.005).length():
+	if (player.position - target_position).length() < Vector2(0.1, 0.1).length():
 		player.position = target_position.ceil()
 		lock = false

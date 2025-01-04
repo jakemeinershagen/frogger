@@ -6,16 +6,11 @@ Started 12/23/2024
 https://20_games_challenge.gitlab.io/games/frogger/
 
 ToDo:
-- get despawner working
-- random patters for car spawning
+
+
 
 MVP:
 
-- Make and animate the game obstacles. All obstacles and platforms will cross the screen horizontally.
-	- Obstacles will alternate direction for each lane.
-	- The road has cars. Each lane has a unique pattern of cars, and speeds vary between lanes.
-	- The river has alternating lanes of logs and turtles. Some turtles can dive underwater periodically. 
-		Some logs are actually crocodiles, which can eat the player if the player lands in their open mouth.
 - The player should die if:
 	- they leave the screen
 	- they are hit by a car

@@ -26,7 +26,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAA
 tile_set = SubResource("TileSet_32vop")
 
 [node name="Frog" parent="." instance=ExtResource("3_1jv7x")]
-position = Vector2(208, 400)
+position = Vector2(32, 208)
 
 [node name="LilyPads" type="Node" parent="."]
 
