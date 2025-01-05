@@ -86,6 +86,7 @@ DIRECTION = Vector2(1, 0)
 position = Vector2(-80, 176)
 OBJECT_TO_SPAWN = ExtResource("5_ua7he")
 DIRECTION = Vector2(1, 0)
+MIN_DISTANCE = 128
 MAX_DISTANCE = 250
 SPEED = 30
 
@@ -93,12 +94,14 @@ SPEED = 30
 position = Vector2(-80, 48)
 OBJECT_TO_SPAWN = ExtResource("5_ua7he")
 DIRECTION = Vector2(1, 0)
+MIN_DISTANCE = 128
 MAX_DISTANCE = 300
 
 [node name="LogSpawner5" parent="LogSpawners" instance=ExtResource("5_h2wnl")]
 position = Vector2(-80, 112)
 OBJECT_TO_SPAWN = ExtResource("5_ua7he")
 DIRECTION = Vector2(1, 0)
+MIN_DISTANCE = 128
 MAX_DISTANCE = 400
 SPEED = 75
 
@@ -106,6 +109,7 @@ SPEED = 75
 position = Vector2(496, 144)
 OBJECT_TO_SPAWN = ExtResource("5_ua7he")
 DIRECTION = Vector2(-1, 0)
+MIN_DISTANCE = 128
 MAX_DISTANCE = 150
 
 [node name="LogSpawner3" parent="LogSpawners" instance=ExtResource("5_h2wnl")]

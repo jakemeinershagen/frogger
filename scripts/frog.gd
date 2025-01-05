@@ -17,11 +17,11 @@ func _process(_delta: float) -> void:
 func _on_log_detector_body_entered(body: Node2D) -> void:
 	if body is Log:
 		print("Log")
-		velocity = body.velocity
 		curr_log = body
 
 
 func _on_log_detector_body_exited(body: Node2D) -> void:
 	if body is Log and body == curr_log:
-		print("off log")
-		velocity = Vector2.ZERO
+		curr_log = null
+		print("no log")
+	print("off log")
