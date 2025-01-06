@@ -17,20 +17,37 @@ func _process(_delta: float) -> void:
 		state_machine.change_state("idle")
 
 
-func die():
+func reset():
 	in_water_region = false
 	curr_log = null
 	state_machine.force_change_state("idle")
 	
 	position = start_position
+	print("reset")
+
+
+func die():
+	reset()
+	
 	print("died")
+
+
+func check_lilypad(body: Lilypad):
+	if body.filled:
+		return
+	body.filled = true
+	Shared.full_pads += 1
+	print("full pads: {0}".format([Shared.full_pads]))
 
 
 func _on_log_detector_body_entered(body: Node2D) -> void:
 	if body is Log:
 		curr_log = body
-	if body is Car:
+	elif body is Car:
 		die()
+	elif body is Lilypad:
+		check_lilypad(body)
+		reset()
 
 
 func _on_log_detector_body_exited(body: Node2D) -> void:
