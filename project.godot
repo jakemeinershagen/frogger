@@ -61,6 +61,7 @@ right={
 2d_physics/layer_1="player"
 2d_physics/layer_2="cars"
 2d_physics/layer_3="logs"
+2d_physics/layer_4="tilemap"
 2d_physics/layer_8="despawner"
 
 [physics]

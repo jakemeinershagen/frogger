@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name Car
 
 var SPEED = 50
 var direction = Vector2.RIGHT

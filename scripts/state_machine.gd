@@ -48,9 +48,15 @@ func change_state(target_state: String) -> bool:
 
 
 ## this isn't implemented yet because I haven't needed it.
-func force_change_state():
+func force_change_state(target_state: String):
 	## this would be something to use only if you really mean it.
-	assert(false, "this isn't implemented yet because I haven't needed it.")
+	if target_state not in states:
+		return false
+	curr_state.lock = false
+	curr_state.exit_state()
+	curr_state = states[target_state]
+	curr_state.enter_state()
+	return true
 
 
 func _process(delta: float) -> void:

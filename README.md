@@ -7,7 +7,8 @@ https://20_games_challenge.gitlab.io/games/frogger/
 
 ToDo:
 
-
+- death conditions
+- death logic
 
 MVP:
 
@@ -15,7 +16,6 @@ MVP:
 	- they leave the screen
 	- they are hit by a car
 	- they fall in the water (frogs can drown, apparently)
-	- they are eaten by a wild animal
 - If the player reaches a lillypad on the top of the screen, the lillypad will be “full.”
 	When all five lillypads are full, the level is complete.
 - Add a UI with a life counter and a score counter.
