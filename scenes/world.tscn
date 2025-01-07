@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dtm8k4pj10ycl"]
+[gd_scene load_steps=12 format=4 uid="uid://dtm8k4pj10ycl"]
 
 [ext_resource type="Texture2D" uid="uid://dht77xm6dy7vq" path="res://assets/tiles.png" id="1_47prk"]
 [ext_resource type="PackedScene" uid="uid://6tt8h8jw5mjp" path="res://scenes/lilypad.tscn" id="2_1mtby"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ma0rt0mmyorx" path="res://scenes/car.tscn" id="4_u6x73"]
 [ext_resource type="PackedScene" uid="uid://boi76kfhlmfqo" path="res://scenes/spawner.tscn" id="5_h2wnl"]
 [ext_resource type="PackedScene" uid="uid://ce4yr5gs2gdqe" path="res://scenes/log.tscn" id="5_ua7he"]
+[ext_resource type="Script" path="res://scripts/counters.gd" id="7_o38vj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttfhg"]
 texture = ExtResource("1_47prk")
@@ -61,22 +62,18 @@ collision_mask = 10
 
 [node name="LillyPad1" parent="LilyPads" instance=ExtResource("2_1mtby")]
 position = Vector2(16, 16)
-rotation = 1.5708
 
 [node name="LillyPad2" parent="LilyPads" instance=ExtResource("2_1mtby")]
 position = Vector2(112, 16)
 
 [node name="LillyPad3" parent="LilyPads" instance=ExtResource("2_1mtby")]
 position = Vector2(208, 16)
-rotation = -3.14159
 
 [node name="LillyPad4" parent="LilyPads" instance=ExtResource("2_1mtby")]
 position = Vector2(304, 16)
-rotation = -3.14159
 
 [node name="LillyPad5" parent="LilyPads" instance=ExtResource("2_1mtby")]
 position = Vector2(400, 16)
-rotation = -1.5708
 
 [node name="CarSpawners" type="Node" parent="."]
 
@@ -147,6 +144,42 @@ OBJECT_TO_SPAWN = ExtResource("5_ua7he")
 DIRECTION = Vector2(-1, 0)
 MAX_DISTANCE = 200
 SPEED = 30
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Counters" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 384.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_o38vj")
+
+[node name="Lives" type="Label" parent="UI/Counters"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 48.0
+grow_vertical = 0
+text = "Lives: "
+
+[node name="Score" type="Label" parent="UI/Counters"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Score: 0"
 
 [connection signal="body_entered" from="Field/WaterArea" to="Frog" method="_on_water_area_body_entered"]
 [connection signal="body_exited" from="Field/WaterArea" to="Frog" method="_on_water_area_body_exited"]

@@ -23,21 +23,20 @@ func reset():
 	state_machine.force_change_state("idle")
 	
 	position = start_position
-	print("reset")
 
 
 func die():
+	if Shared.lives <= 0:
+		Shared.win = false
+		return
 	reset()
-	
-	print("died")
+	Shared.lives -= 1
 
 
 func check_lilypad(body: Lilypad):
 	if body.filled:
 		return
-	body.filled = true
-	Shared.full_pads += 1
-	print("full pads: {0}".format([Shared.full_pads]))
+	body.set_filled()
 
 
 func _on_log_detector_body_entered(body: Node2D) -> void:

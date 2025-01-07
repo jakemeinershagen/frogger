@@ -7,11 +7,10 @@ https://20_games_challenge.gitlab.io/games/frogger/
 
 ToDo:
 
-
+- ui for fail and success state with reset button
 
 MVP:
 
-- Add a UI with a life counter and a score counter.
 - Create an animation or use a particle effect to make the frog’s death extra juicy!
 
 Future Stuff:
