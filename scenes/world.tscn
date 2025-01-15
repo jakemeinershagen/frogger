@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://boi76kfhlmfqo" path="res://scenes/spawner.tscn" id="5_h2wnl"]
 [ext_resource type="PackedScene" uid="uid://ce4yr5gs2gdqe" path="res://scenes/log.tscn" id="5_ua7he"]
 [ext_resource type="Script" path="res://scripts/counters.gd" id="7_o38vj"]
-[ext_resource type="Script" path="res://scripts/result_ui.gd" id="8_wqmua"]
+[ext_resource type="PackedScene" uid="uid://cgruxrxkffdhj" path="res://scenes/result_ui.tscn" id="8_t4nvh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttfhg"]
 texture = ExtResource("1_47prk")
@@ -182,58 +182,7 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Score: 0"
 
-[node name="ResultUI" type="Control" parent="UI"]
-visible = false
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -48.0
-offset_right = 48.0
-offset_bottom = 48.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("8_wqmua")
-
-[node name="ColorRect" type="ColorRect" parent="UI/ResultUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.441406, 0.441406, 0.441406, 1)
-
-[node name="ResultLabel" type="Label" parent="UI/ResultUI"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -36.0
-offset_top = 12.0
-offset_right = 34.0
-offset_bottom = 35.0
-grow_horizontal = 2
-text = "Test Text"
-
-[node name="ResetButton" type="Button" parent="UI/ResultUI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = 5.0
-offset_right = 32.5
-offset_bottom = 36.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Restart"
+[node name="ResultUI" parent="UI" instance=ExtResource("8_t4nvh")]
 
 [connection signal="body_entered" from="Field/WaterArea" to="Frog" method="_on_water_area_body_entered"]
 [connection signal="body_exited" from="Field/WaterArea" to="Frog" method="_on_water_area_body_exited"]
-[connection signal="button_up" from="UI/ResultUI/ResetButton" to="UI/ResultUI" method="_on_reset_button_button_up"]
